@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlackBackgr"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/grn_flg_logo"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/logo_green_flag"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/grnflg_description"
+        style="@style/grnflg_font_style"
+        android:layout_marginTop="80dp"
+        android:text="@string/greenflag_customers_can_creat_an_account_to_access"
+
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grn_flg_logo" />
+
+    <TextView
+        android:id="@+id/grnflg_desc1"
+        style="@style/grnflg_font_style.desc"
+        android:layout_marginTop="10dp"
+        android:text="@string/car_health_updates"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grnflg_description" />
+
+    <TextView
+        android:id="@+id/grnflg_desc2"
+        style="@style/grnflg_font_style.desc"
+        android:text="@string/request_a_rescue_online"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grnflg_desc1" />
+
+    <TextView
+        android:id="@+id/grnflg_desc3"
+        style="@style/grnflg_font_style.desc"
+
+        android:text="@string/policy_information"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grnflg_desc2" />
+
+
+
+    <Button
+        android:id="@+id/btn_create_account"
+        style="@style/grnflg_font_style.btn"
+        android:background="@drawable/gradient_button_background"
+        android:text="@string/create_an_account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+
+</android.support.constraint.ConstraintLayout>

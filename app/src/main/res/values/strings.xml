@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Week1Assignment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="policy_information">Policy Information</string>
+    <string name="request_a_rescue_online">Request a rescue online</string>
+    <string name="car_health_updates">Car health updates</string>
+    <string name="greenflag_customers_can_creat_an_account_to_access">GreenFlag customers can create an account to access</string>
+    <string name="next">Next</string>
+
+
+    <string name="txt_password_requirement">Your password should have a minimum of 8 characters and
+        contain at least one number, one uppercase and one lowercase letter. You can use special characters.</string>
+    <string name="err_pass_not_valid">One of the passwords you entered wasn\'t valid</string>
+    <string name="err_pass_not_match">Your passwords don\'t match</string>
+    <string name="err_email_already_exist">An account already exist for this email address</string>
+    <string name="err_email_not_valid">Not a valid email address, please try again!</string>
+
+    <string-array name="country">
+        <item>Not-Specified</item>
+        <item>France</item>
+        <item>India</item>
+        <item>Indonesia</item>
+        <item>Italy</item>
+        <item>New Zealand</item>
+        <item>Malaysia</item>
+        <item>Singapore</item>
+        <item>United States</item>
+    </string-array>
+</resources>

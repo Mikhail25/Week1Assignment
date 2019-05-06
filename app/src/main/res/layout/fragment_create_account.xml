@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlackBackgr"
+    tools:context=".createAccountFragment">
+
+
+    <TextView
+        android:id="@+id/tv_email"
+        style="@style/grnflg_font_style.login_txtview"
+        android:text="Email address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_email"
+        style="@style/style_edittxt_login"
+        android:inputType="textWebEmailAddress"
+
+        android:nextFocusDown="@id/et_password"
+        android:paddingEnd="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_email" />
+
+    <TextView
+        android:id="@+id/errtxt_email"
+        style="@style/grnflg_font_style.error_msg_txtview"
+        android:text="@string/err_email_already_exist"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_email" />
+
+    <TextView
+        android:id="@+id/tv_password"
+        style="@style/grnflg_font_style.login_txtview"
+        android:text="Create password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/errtxt_email" />
+
+    <EditText
+        android:id="@+id/et_password"
+        style="@style/style_edittxt_login"
+        android:hint="See criteria below"
+        android:inputType="textPassword"
+        android:nextFocusDown="@id/et_rptpass"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_password" />
+
+    <TextView
+        android:id="@+id/tv_rptpass"
+        style="@style/grnflg_font_style.login_txtview"
+        android:text="Repeat password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_password" />
+
+    <EditText
+        android:id="@+id/et_rptpass"
+        style="@style/style_edittxt_login"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:inputType="textPassword"
+        android:nextFocusDown="@id/btn_account_next"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_rptpass" />
+
+    <TextView
+        android:id="@+id/errtxt_password"
+        style="@style/grnflg_font_style.error_msg_txtview"
+        android:text="@string/err_pass_not_match"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_rptpass" />
+
+    <TextView
+        android:id="@+id/pass_criteria"
+        style="@style/grnflg_font_style.login_txtview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="@string/txt_password_requirement"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_account_next"
+
+        app:layout_constraintTop_toBottomOf="@id/errtxt_password" />
+
+    <Button
+        android:id="@+id/btn_account_next"
+        style="@style/grnflg_font_style.btn"
+        android:layout_width="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/gradient_button_background_inactive"
+        android:enabled="false"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pass_criteria" />
+
+</android.support.constraint.ConstraintLayout>

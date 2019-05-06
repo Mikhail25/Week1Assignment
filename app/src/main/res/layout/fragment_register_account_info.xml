@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlackBackgr"
+    tools:context=".registerAccountInfoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/image_profile"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_name"
+        style="@style/style_edittxt_login"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:hint="Name"
+        app:layout_constraintEnd_toStartOf="@id/image_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_username"
+        style="@style/style_edittxt_login"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:hint="Username"
+        app:layout_constraintEnd_toStartOf="@id/image_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_name" />
+
+
+    <EditText
+        android:id="@+id/et_pass2"
+        style="@style/style_edittxt_login"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toStartOf="@id/image_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_username" />
+
+    <Button
+        android:id="@+id/btn_picture_picker"
+        style="@style/grnflg_font_style.btn"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/gradient_button_background"
+        android:text="CHANGE PHOTO"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/image_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_pass2" />
+
+    <EditText
+        android:id="@+id/et_age"
+        style="@style/style_edittxt_login"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:hint="Age"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@id/image_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_picture_picker" />
+
+    <EditText
+        android:id="@+id/et_birthdate"
+        style="@style/style_edittxt_login"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:focusable="false"
+        android:hint="BIRTH DATE"
+        app:layout_constraintEnd_toStartOf="@id/image_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_age" />
+
+    <Spinner
+        android:id="@+id/spin_country"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/colorWhiteFont"
+        app:layout_constraintEnd_toStartOf="@id/image_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_birthdate" />
+
+    <RadioGroup
+        android:id="@+id/radio_gender_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spin_country">
+
+        <TextView
+            style="@style/grnflg_font_style"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radio_btn_yes"
+            style="@style/grnflg_font_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/colorWhiteFont"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/radio_btn_no"
+            style="@style/grnflg_font_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:buttonTint="@color/colorWhiteFont"
+            android:text="Female" />
+
+        <RadioButton
+            android:id="@+id/radio_btn_unspecified"
+            style="@style/grnflg_font_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:buttonTint="@color/colorWhiteFont"
+            android:checked="true"
+            android:text="Not Specified" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/et_postal_address"
+        style="@style/style_edittxt_login"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:hint="Postal Address (opt)"
+        app:layout_constraintEnd_toStartOf="@id/image_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio_gender_picker" />
+
+    <Button
+        android:id="@+id/btn_account_save"
+        style="@style/grnflg_font_style.btn"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/gradient_button_background"
+        android:text="SAVE"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/et_postal_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio_gender_picker" />
+
+
+</android.support.constraint.ConstraintLayout>
