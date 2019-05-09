@@ -45,7 +45,7 @@ import static android.os.Environment.getExternalStoragePublicDirectory;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class registerAccountInfoFragment extends Fragment {
+public class RegisterAccountInfoFragment extends Fragment {
     View rootView;
     ImageView image_profile;
     EditText et_name, et_username, et_pass2,et_age, et_birthdate, et_post_address;
@@ -59,7 +59,7 @@ public class registerAccountInfoFragment extends Fragment {
     private static final int REQUEST_IMAGE_CAPTURE = 52;
     private DatePickerDialog.OnDateSetListener dateSetListener;
 
-    public registerAccountInfoFragment() {
+    public RegisterAccountInfoFragment() {
         // Required empty public constructor
     }
 
@@ -123,6 +123,7 @@ public class registerAccountInfoFragment extends Fragment {
         });
 
         //Listener to set the birth date, calls datepicker dialog
+        //and will also automatically set the age
         et_birthdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -147,6 +148,9 @@ public class registerAccountInfoFragment extends Fragment {
                 Log.d(TAG, "onDateSet: mm/dd/yyyy: "+month+"/"+dayOfMonth+"/"+year);
                 String date = month+"/"+dayOfMonth+"/"+year;
                 et_birthdate.setText(date);
+
+                //getting age from birthdate
+                et_age.setText(getAge(year, month, dayOfMonth));
             }
         };
 
@@ -167,6 +171,15 @@ public class registerAccountInfoFragment extends Fragment {
             }
         });
 
+        et_age.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(et_birthdate.getText().toString().isEmpty()){
+                    Toast.makeText(getContext(),"You must enter your date of birth to fill this text",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -176,6 +189,22 @@ public class registerAccountInfoFragment extends Fragment {
 
 
         return rootView;
+    }
+
+    private String getAge(int year, int month, int dayOfMonth) {
+        Calendar dob = Calendar.getInstance();
+        Calendar today = Calendar.getInstance();
+
+        dob.set(year,month,dayOfMonth);
+
+        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+
+        if (today.get(Calendar.DAY_OF_YEAR)< dob.get(Calendar.DAY_OF_YEAR)){
+            age--;
+        }
+        Integer ageInt = age;
+        String ageS = ageInt.toString();
+        return ageS;
     }
 
     private void saveUserData() {
@@ -211,7 +240,6 @@ public class registerAccountInfoFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        realm.close();
     }
 
 

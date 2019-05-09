@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBlackBackgr"
-    tools:context=".registerAccountInfoFragment">
+    tools:context=".RegisterAccountInfoFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -40,6 +40,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:hint="Username"
+        android:inputType="text"
         app:layout_constraintEnd_toStartOf="@id/image_profile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_name" />
@@ -75,30 +76,30 @@
         app:layout_constraintTop_toBottomOf="@id/et_pass2" />
 
     <EditText
-        android:id="@+id/et_age"
-        style="@style/style_edittxt_login"
-        android:layout_width="0dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:hint="Age"
-        android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@id/image_profile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_picture_picker" />
-
-    <EditText
         android:id="@+id/et_birthdate"
         style="@style/style_edittxt_login"
         android:layout_width="0dp"
         android:layout_height="35dp"
-        android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
         android:focusable="false"
         android:hint="BIRTH DATE"
-        app:layout_constraintEnd_toStartOf="@id/image_profile"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_age" />
+        app:layout_constraintTop_toBottomOf="@id/btn_picture_picker" />
+    <EditText
+        android:id="@+id/et_age"
+        style="@style/style_edittxt_login"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:hint="Age"
+        android:inputType="none"
+        android:focusable="false"
+        app:layout_constraintEnd_toStartOf="@id/image_profile"
+        app:layout_constraintStart_toEndOf="@id/et_birthdate"
+        app:layout_constraintTop_toBottomOf="@id/btn_picture_picker" />
+
 
     <Spinner
         android:id="@+id/spin_country"

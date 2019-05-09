@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.regex.Pattern;
 
@@ -24,7 +23,7 @@ import java.util.regex.Pattern;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class createAccountFragment extends Fragment {
+public class CreateAccountFragment extends Fragment {
     Button btn_next;
     TextView err_email, err_password;
     EditText et_email, et_pass, et_rptpass;
@@ -42,9 +41,9 @@ public class createAccountFragment extends Fragment {
 
 
 
-    private static final String TAG = "createAccountFragment";
+    private static final String TAG = "CreateAccountFragment";
 
-    public createAccountFragment() {
+    public CreateAccountFragment() {
         // Required empty public constructor
     }
 
@@ -130,7 +129,7 @@ public class createAccountFragment extends Fragment {
         fragmentTransaction.setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left,
                 R.anim.enter_from_right,R.anim.exit_to_left);
 
-        registerAccountInfoFragment register = new registerAccountInfoFragment();
+        RegisterAccountInfoFragment register = new RegisterAccountInfoFragment();
         register.setArguments(bundle);
 
         fragmentTransaction.replace(R.id.fragment_container,register);

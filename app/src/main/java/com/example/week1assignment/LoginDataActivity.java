@@ -8,8 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import java.util.Stack;
 
@@ -17,7 +15,7 @@ public class LoginDataActivity extends AppCompatActivity {
     FragmentTransaction fragmentTransaction;
     private static final String TAG = LoginDataActivity.class.getSimpleName();
     Button btn_back_toolbar;
-    private Stack<Fragment> fragmentStack;
+
 
 
 
@@ -27,7 +25,7 @@ public class LoginDataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_data);
 
-        fragmentStack = new Stack<Fragment>();
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -40,7 +38,7 @@ public class LoginDataActivity extends AppCompatActivity {
         });
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.fragment_container, new /*registerAccountInfoFragment()*/createAccountFragment());
+        fragmentTransaction.add(R.id.fragment_container, new RegisterAccountInfoFragment()/*CreateAccountFragment()*/);
 
         fragmentTransaction.commit();
     }
@@ -50,7 +48,6 @@ public class LoginDataActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Log.d(TAG, "onBackPressed: Whoops! going back!");
-
         super.onBackPressed();
 
     }
@@ -58,6 +55,6 @@ public class LoginDataActivity extends AppCompatActivity {
     @Override
     public void finish() {
         super.finish();
-        //overridePendingTransition(R.anim.enter_from_below,R.anim.exit_to_above);
+        overridePendingTransition(R.anim.enter_from_below,R.anim.exit_to_above);
     }
 }
